@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(/assets/fonts/Poppins-Bold.ttf);
+    font-weight: bold;
+    font-style: bold;
+}
+:root {
+    --Purple-number: hsl(259, 100%, 65%);
+    --danger-input: hsl(0, 100%, 67%);
+    --White-bg: hsl(0, 0%, 100%);
+    --Off-body: hsl(0, 0%, 94%);
+    --Light-desactive: hsl(0, 0%, 86%);
+    --Smokey: hsl(0, 1%, 44%);
+    --Off-text: hsl(0, 0%, 8%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--Off-body);
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-calculator {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--White-bg);
+    width: 90%;
+    min-height: 530px;
+    margin: 0 auto;
+    border-radius: 20px 20px 100px 20px;
+
+}
+
+.section__inputs {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.box__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: 100px;
+}
+
+.inputs {
+    overflow:scroll;
+    padding-left: 10px;
+    border: 1px solid var(--Smokey);
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 800;
+}
+.warning{
+    border: 1px solid var(--danger-input);
+}
+.label {
+    color: var(--Smokey);
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.warning-label{
+    font-size: 16px;
+    color: var(--danger-input);
+}
+.warning_text_campus{
+    padding-top: 20px;
+    text-align: center;
+    color: var(--danger-input);
+    font-size: 10px;
+    /* animation: 3s warning infinite ease-in ; */
+}
+/* @keyframes warning {
+    from{
+       scale: 1;
+    }to{
+        scale: 1.5;
+    }
+} */
+.warning_text{
+
+    color: var(--danger-input);
+    font-size: 10px;
+}
+.section__button{
+    width: 90%;
+    margin: 50px auto;
+    position: relative;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.line{
+    min-width: 100%;
+    border: 1px solid var(--Light-desactive);
+}
+.section__time{
+    width: 90%;
+    
+    margin: 0 auto;
+}
+.section__time .number__time{
+    font-size: 60px;
+    color: var(--Purple-number);
+}
+.section__button img{
+    background-color: var(--Purple-number);
+    border-radius: 50%;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+.box__time{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.box__time p{
+    font-weight: bold;
+    font-size: 50px;
+}
