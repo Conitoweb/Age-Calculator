@@ -90,7 +90,7 @@ body {
     }
 } */
 .warning_text{
-
+    display: none;
     color: var(--danger-input);
     font-size: 10px;
 }
