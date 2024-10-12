@@ -4,10 +4,12 @@ const YEAR = document.querySelector("#year")
 const BUTTON_SUBMIT = document.querySelector("#button__submit")
 BUTTON_SUBMIT.addEventListener("click" ,  handleInput)
 const INPUTS = document.querySelectorAll("input")
+const LABEL = document.querySelectorAll("label")
 let FechaActual = new Date()
 
 
 function handleInput(){
+    //parseamos para que sea number y no string
     let day = parseFloat(DAY.value)
     let month = parseFloat(MONTH.value)
     let year = parseFloat(YEAR.value)
@@ -16,12 +18,32 @@ function handleInput(){
      handleCalculator({day , month , year})
 
 }else{
-    alert("llenar campos")
-    
+  invalidForm()
 }
 
 
 }
+
+function invalidForm() {
+    INPUTS.forEach(input => {
+        input.classList.add("warning")
+      
+    })
+        LABEL.forEach(label => {
+            label.classList.add("warning-label")
+        })
+
+}
+function formValid(){
+    INPUTS.forEach(input => {
+        input.classList.remove("warning")
+      
+    })
+        LABEL.forEach(label => {
+            label.classList.remove("warning-label")
+        })
+}
+
 function validNumber({day , month , year}){
     const invalidDay = document.querySelector("#invalid__day")
     const invalidMonth = document.querySelector("#invalid__month")
@@ -31,6 +53,7 @@ function validNumber({day , month , year}){
     year > 5000 ? invalidYear.style.display = "flex" : invalidYear.style.display = "none"
 }
 function handleCalculator({day , month , year}){
+   formValid()
     validNumber({day , month , year})
     if(day <= 31 && month <= 12 && year <= 5000 ){
         let resultYear = Math.abs(FechaActual.getFullYear() - year)
