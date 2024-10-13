@@ -8,21 +8,28 @@
 
 </head>
 <body>
-<main class="main-calculator"> 
+  <main class="main-calculator"> 
+  <div class="box__lenguajes">
+    
+    <select name="idiomas" id="formIdioma" >
+      <option value="ingles">ingles</option>
+      <option value="español">español</option>
+  </select>
+  </div>
   <!-- <span class="warning_text_campus">Rellena los campos faltantes !!</span> -->
 <section class="section__inputs ">
   <div id="input_day" class="input__day box__inputs">
-    <label class="label warning-label--" for="day">day</label>
+    <label id="label-day" class="label warning-label--" for="day">day</label>
     <input class="inputs warning--" placeholder="DD" type="number" id="day">
      <span id="invalid__day" class="warning_text">DAY invalid !</span>
   </div>
   <div id="input_month" class="input__month box__inputs">
-    <label class="label warning-label--" for="month">month</label>
+    <label id="label-month" class="label warning-label--" for="month">month</label>
     <input class="inputs warning--" placeholder="MM"  twwype="number" id="month">
      <span id="invalid__month" class="warning_text">MONTH invalid !</span>
   </div>
   <div id="input_year" class="input__year box__inputs">
-    <label class="label warning-label--" for="year">year</label>
+    <label id="label-year" class="label warning-label--" for="year">year</label>
     <input class="inputs warning--" placeholder="YY" type="number" id="year">
   <span id="invalid__year" class="warning_text">YEAR invalid !</span> 
   </div>
@@ -38,16 +45,16 @@
 <section class="section__time">
   <div class="year box__time">
   <span class="number__time" id="campusYear">--</span>
-  <p>years</p>
+  <p id="span-year">years</p>
   
   </div>
   <div class="months box__time">
     <span class="number__time " id="campusMonth">--</span>
-    <p>months</p>
+    <p id="span-months">months</p>
   </div>
   <div class="days box__time">
     <span class="number__time" id="campusDay">--</span>
-    <p>days</p>
+    <p id="span-days">days</p>
   </div>
 </section>
 

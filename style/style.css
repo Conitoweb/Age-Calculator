@@ -23,6 +23,19 @@ body {
     align-items: center;
     flex-direction: column;
 }
+.box__lenguajes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box__lenguajes select{
+    margin-top:0.5rem ;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 18px;
+    background-color: var(--Purple-number);
+    color: var(--White-bg);
+}
 
 
 
