@@ -8,11 +8,12 @@ const LABEL = document.querySelectorAll("label")
 let FechaActual = new Date()
 
 
+
 function handleInput(){
     //parseamos para que sea number y no string
-    let day = parseFloat(DAY.value)
-    let month = parseFloat(MONTH.value)
-    let year = parseFloat(YEAR.value)
+    let day = parseInt(DAY.value)
+    let month = parseInt(MONTH.value)
+    let year = parseInt(YEAR.value)
   
  if(day && month && year){
      handleCalculator({day , month , year})
@@ -55,10 +56,12 @@ function validNumber({day , month , year}){
 function handleCalculator({day , month , year}){
    formValid()
     validNumber({day , month , year})
+   
     if(day <= 31 && month <= 12 && year <= 5000 ){
         let resultYear = Math.abs(FechaActual.getFullYear() - year)
-        let resultMonth = Math.abs(FechaActual.getMonth() - month)
-        let resultDay = Math.abs(FechaActual.getDay() - day)
+        let resultMonth = Math.abs((FechaActual.getMonth() + 1 ) - month)
+        let resultDay = Math.abs(FechaActual.getDate() - day)
+        
         const CampusYear = document.querySelector("#campusYear").textContent = resultYear
         const CampusMonth = document.querySelector("#campusMonth").textContent = resultMonth
         const CampusDay = document.querySelector("#campusDay").textContent = resultDay
