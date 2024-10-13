@@ -1,13 +1,11 @@
+let FechaActual = new Date()
 const DAY = document.querySelector("#day")
 const MONTH = document.querySelector("#month")
 const YEAR = document.querySelector("#year")
 const BUTTON_SUBMIT = document.querySelector("#button__submit")
-BUTTON_SUBMIT.addEventListener("click" ,  handleInput)
 const INPUTS = document.querySelectorAll("input")
 const LABEL = document.querySelectorAll("label")
-let FechaActual = new Date()
-
-
+BUTTON_SUBMIT.addEventListener("click" ,  handleInput)
 
 function handleInput(){
     //parseamos para que sea number y no string
@@ -68,6 +66,33 @@ function handleCalculator({day , month , year}){
     }
 
 
+}
+
+// cambio de idioma 
+const selectLenguaje = document.querySelector("#formIdioma")
+selectLenguaje.addEventListener("change" , validarChange)
+function validarChange(){
+   const idioma = selectLenguaje.value
+   if(idioma === "español"){
+       // texto del parrafo
+       const spanYear = document.querySelector("#span-year").textContent = "Año"
+       const spanMonth = document.querySelector("#span-months").textContent = "Mes"
+       const spanDay = document.querySelector("#span-days").textContent = "Dia"
+       // texto del label
+       const labelDay = document.querySelector("#label-day").textContent = "Dia"
+       const labelMonth = document.querySelector("#label-month").textContent = "Mes"
+       const labelYear = document.querySelector("#label-year").textContent = "Año"   
+   }else{
+  // texto del parrafo
+  const spanYear = document.querySelector("#span-year").textContent = "years"
+  const spanMonth = document.querySelector("#span-months").textContent = "months"
+  const spanDay = document.querySelector("#span-days").textContent = "days"
+  // texto del label
+  const labelDay = document.querySelector("#label-day").textContent = "day"
+  const labelMonth = document.querySelector("#label-month").textContent = "Month"
+  const labelYear = document.querySelector("#label-year").textContent = "year"   
+   }
+    
 }
 
 
